@@ -1,0 +1,6 @@
+
+
+--Descargar y lanzar conteneddor docker--
+docker pull wordpress
+docker run -i -t wordpress /bin/bash
+
