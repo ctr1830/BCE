@@ -4,3 +4,5 @@
 docker pull wordpress
 docker run -i -t wordpress /bin/bash
 
+Para tunel directo:
+ssh -p 2222 ikasle@127.0.0.1 -L 8000:ipdocker:80
