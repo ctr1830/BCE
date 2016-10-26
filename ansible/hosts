@@ -42,8 +42,8 @@
 
 ## db-[99:101]-node.example.com
 
-[nginx1]
+[nginx_dev]
 172.17.0.10
 
-[nginx2]
+[nginx_prod]
 172.17.0.11

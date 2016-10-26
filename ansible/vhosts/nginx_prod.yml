@@ -1,0 +1,13 @@
+---
+- hosts: nginx_prod
+  tasks:
+   - name: Configure vhost3
+     copy: src=/home/cristian/Escritorio/vhosts/vhost3.conf dest=/etc/nginx/conf.d/vhost3.conf owner=root group=root mode=0644
+   - name: Configure vhost2
+     copy: src=/home/cristian/Escritorio/vhosts/vhost4.conf dest=/etc/nginx/conf.d/vhost4.conf owner=root group=root mode=0644
+     notify:
+      - Start Nginx
+
+  handlers:
+   - name: Start Nginx
+     service: name=nginx state=reloaded
