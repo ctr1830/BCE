@@ -1,13 +1,11 @@
 ---
-- hosts: nginx_dev
+- hosts: dev
   tasks:
    - name: Configure vhost1
      copy: src=/home/borja/BCE/ansible/vhosts/vhost1.conf dest=/home/ikasle/vhost1.conf owner=root group=root mode=0644
    - name: Configure vhost2
      copy: src=/home/borja/BCE/ansible/vhosts/vhost2.conf dest=/home/ikasle/vhost2.conf owner=root group=root mode=0644
-     notify:
-      - Start Nginx
-
-  handlers:
-   - name: Start Nginx
-     service: name=nginx state=reloaded
+   - name: Copy script
+     copy: src=/home/borja/BCE/ansible/script.sh dest=/home/ikasle/script.sh owner=root group=root mode=0777
+   - name: Start docker
+     script: /home/ikasle/script.sh
