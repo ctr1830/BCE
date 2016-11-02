@@ -8,4 +8,4 @@
    - name: Copy script
      copy: src=/home/borja/BCE/ansible/script.sh dest=/home/ikasle/script.sh owner=root group=root mode=0777
    - name: Start docker
-     script: /home/ikasle/script.sh
+     command: bash /home/ikasle/script.sh
